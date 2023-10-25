@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ogFY3nTfsbTZbKopkGq0okJ28x45pwCnvirpFRG8jXLctd2Z3yX2XPsr84dXewhCkvI2eznvSnVlBoR19xxm0w==",
+  "success": true,
+  "projectFilePath": "/home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/MagicVilla_coupon.csproj",
+  "expectedPackageFiles": [
+    "/home/joe/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/joe/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/joe/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/joe/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/joe/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/joe/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
