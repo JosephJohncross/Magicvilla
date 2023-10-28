@@ -1,7 +1,10 @@
+using MagicVilla_coupon;
 using MagicVilla_coupon.Data;
 using MagicVilla_coupon.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using MagicVilla_coupon.Models.DTOs;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,8 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "MagicVilla", Version = "v1" });
 });
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+
 var app = builder.Build();
 
 // Configure the http request pipeline
@@ -40,22 +45,24 @@ app.MapGet("api/coupon/{id:int}", (int id) =>
 .Produces<Coupon>(200);
 
 // Creates a coupon
-app.MapPost("api/coupon", ([FromBody] Coupon coupon) =>
+app.MapPost("api/coupon", (IMapper _mapper, [FromBody] CreateCouponDTO coupon_C_DTO) =>
 {
-    if (coupon.Id != 0 || string.IsNullOrEmpty(coupon.Name))
+    if (string.IsNullOrEmpty(coupon_C_DTO.Name))
     {
         return Results.BadRequest("Invalid Id or Coupon Name");
     }
-    if (CouponStore.couponList.FirstOrDefault(u => u.Name.ToLower() == coupon.Name.ToLower()) != null)
+    if (CouponStore.couponList.FirstOrDefault(u => u.Name.ToLower() == coupon_C_DTO.Name.ToLower()) != null)
     {
         return Results.BadRequest("Coupon Name already exist");
     }
-
+    Coupon coupon = _mapper.Map<Coupon>(coupon_C_DTO);
     coupon.Id = CouponStore.couponList.OrderByDescending(u => u.Id).FirstOrDefault().Id + 1;
     CouponStore.couponList.Add(coupon);
 
+    CouponDTO coupon_DTO = _mapper.Map<CouponDTO>(coupon);
+
     // return Results.Created($"/api/coupon/{coupon.Id}", coupon);
-    return Results.CreatedAtRoute("GetCoupon", new { Id = coupon.Id }, coupon);
+    return Results.CreatedAtRoute("GetCoupon", new { Id = coupon.Id }, coupon_DTO);
 })
 .WithName("CreateCoupon")
 .Accepts<Coupon>("application/json")

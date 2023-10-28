@@ -30,3 +30,5 @@
 /home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/obj/Debug/net7.0/MagicVilla_coupon.MvcApplicationPartsAssemblyInfo.cs
 /home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/obj/Debug/net7.0/MagicVilla_coupon.csproj.CopyComplete
+/home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/AutoMapper.dll
+/home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
