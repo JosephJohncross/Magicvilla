@@ -32,3 +32,5 @@
 /home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/obj/Debug/net7.0/MagicVilla_coupon.csproj.CopyComplete
 /home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/AutoMapper.dll
 /home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/FluentValidation.dll
+/home/joe/Documents/Workspace/ASP/MagicVilla_Coupon/MagicVilla_coupon/bin/Debug/net7.0/FluentValidation.DependencyInjectionExtensions.dll
