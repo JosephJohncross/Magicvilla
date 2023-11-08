@@ -18,6 +18,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
+// var port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
 var app = builder.Build();
 
 // Configure the http request pipeline
@@ -29,6 +30,20 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "MagicVilla");
     });
 }
+else
+{
+    app.UseExceptionHandler(appBuilder =>
+    {
+        appBuilder.Run(async context =>
+        {
+            context.Response.StatusCode = 500;
+            await context.Response.WriteAsync(
+                "An unexpected fault happened. Try again"
+            );
+        });
+    });
+}
+
 
 // Retrieves all the coupons
 app.MapGet("api/coupons", (ILogger<Program> _logger) =>
@@ -168,7 +183,13 @@ app.MapDelete("api/coupon/{id:int}", (int id) =>
 })
 .WithName("DeleteCoupon")
 .Produces<ApiResponse>(204)
-.Produces(400);;
+.Produces(400);
+
+//For practice 
+// app.MapGet("/hello", (LinkGenerator generator) =>
+// {
+//     return generator.GetPathByName("GetCoupon");
+// });
 
 
 app.UseHttpsRedirection();
